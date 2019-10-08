@@ -1,0 +1,65 @@
+<!--
+ - Created by Kamil Golis on 07.10.2019.
+ -->
+
+<!-- My Calendar -->
+<template>
+	<div class="calendar disable-selection" id="calendar">
+		<div class="left-side">
+			<div class="current-day text-center">
+				<h1 class="calendar-left-side-day">
+					<template if:true={currentDate}>
+						{currentDate.day}
+					</template>
+				</h1>
+				<div class="calendar-left-side-day-of-week">
+					<template if:true={currentDate}>
+						{currentDate.weekDay}
+					</template>
+				</div>
+			</div>
+			<div class="current-day-events">
+				<div>Current Events:</div>
+				<ul class="current-day-events-list"></ul>
+			</div>
+			<div class="add-event-day">
+				<input type="text" class="add-event-day-field" placeholder="Create an Event">
+				<span class="fa fa-plus-circle cursor-pointer add-event-day-field-btn"></span>
+			</div>
+		</div>
+		<div class="right-side">
+			<div class="text-right calendar-change-year">
+				<div class="calendar-change-year-slider">
+					<span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"><span onclick={prevYear}>&#8249;</span></span>
+					<span class="calendar-current-year">
+						<template if:true={currentDate}>
+							{currentDate.year}
+						</template>
+					</span>
+					<span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"><span onclick={nextYear}>&#8250;</span></span>
+				</div>
+			</div>
+			<div class="calendar-month-list">
+				<ul class="calendar-month">
+					<template for:each={monthTemplate} for:item="item">
+						<li key={item.num} class={item.cssClass} data-month={item.month} data-monthnum={item.num} onclick={monthClick}>{item.month}</li>
+					</template>
+				</ul>
+			</div>
+			<div class="calendar-week-list">
+				<ul class="calendar-week">
+					<template for:each={weekTemplate} for:item="item">
+						<li key={item.num}>{item.day}</li>
+					</template>
+				</ul>
+			</div>
+			<div class="calendar-day-list">
+				<ul class="calendar-days">
+					<template for:each={daysTemplate} for:item="item">
+						<li key={item.num} class={item.cssClass} data-day={item.day} data-month={item.month} data-year={item.year} onclick={dayClick}></li>
+					</template>
+				</ul>
+			</div>
+		</div>
+	</div>
+</template>
