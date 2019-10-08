@@ -49,7 +49,7 @@ export default class MyCalendar extends LightningElement {
 		this.weekTemplate = weekTemplate;
 	}
 
-    drawMonths() {
+	drawMonths() {
 		let availableMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 		let monthTemplate = [];
 		let calendar = this.getCalendar();

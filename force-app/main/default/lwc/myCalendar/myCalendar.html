@@ -30,19 +30,22 @@
 		<div class="right-side">
 			<div class="text-right calendar-change-year">
 				<div class="calendar-change-year-slider">
-					<span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"><span onclick={prevYear}>&#8249;</span></span>
+					<span class="fa fa-caret-left cursor-pointer calendar-change-year-slider-prev"><span
+							onclick={prevYear}>&#8249;</span></span>
 					<span class="calendar-current-year">
 						<template if:true={currentDate}>
 							{currentDate.year}
 						</template>
 					</span>
-					<span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"><span onclick={nextYear}>&#8250;</span></span>
+					<span class="fa fa-caret-right cursor-pointer calendar-change-year-slider-next"><span
+							onclick={nextYear}>&#8250;</span></span>
 				</div>
 			</div>
 			<div class="calendar-month-list">
 				<ul class="calendar-month">
 					<template for:each={monthTemplate} for:item="item">
-						<li key={item.num} class={item.cssClass} data-month={item.month} data-monthnum={item.num} onclick={monthClick}>{item.month}</li>
+						<li key={item.num} class={item.cssClass} data-month={item.month} data-monthnum={item.num}
+							onclick={monthClick}>{item.month}</li>
 					</template>
 				</ul>
 			</div>
@@ -56,7 +59,8 @@
 			<div class="calendar-day-list">
 				<ul class="calendar-days">
 					<template for:each={daysTemplate} for:item="item">
-						<li key={item.num} class={item.cssClass} data-day={item.day} data-month={item.month} data-year={item.year} onclick={dayClick}></li>
+						<li key={item.num} class={item.cssClass} data-day={item.day} data-month={item.month}
+							data-year={item.year} onclick={dayClick}></li>
 					</template>
 				</ul>
 			</div>
